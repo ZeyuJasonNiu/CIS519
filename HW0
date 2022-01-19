@@ -10,27 +10,8 @@
 
 '''HW0-Problem-2'''
 
-   '''select desired species and sort sepal_length'''
-    target_class = iris[iris["species"]==flower_class]
-    data = target_class['sepal_length']*10
-    #print(data)
-    intdata = data.astype(np.int64)
-    sortdata = sorted(intdata,reverse=True)
-    #print(sortdata)
-    '''find the largest k different values from sorted list'''
-    largest = {}
-    length = len(sortdata)
-    j = 0
-    for i in range(0,length-1):
-      if (sortdata[i] != sortdata[i+1]):
-        largest[j] = sortdata[i];
-        j +=1
-    '''calculate and returnmean value'''
-    sum = 0
-    for i in range(0,n):
-      sum += largest[i]
-    print(sum/(n*10))
-    return sum/(n*10)
+  mean = np.mean(iris[iris["species"]==flower_class].nlargest(n,"sepal_width")["sepal_length"])
+  return mean
 
 '''HW0-Problem-3'''
 
