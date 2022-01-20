@@ -19,4 +19,26 @@
 
 '''HW0-Problem-4'''
 
+X = df['Days since 1 AD']-578150.50
+
+df['Volume'].astype('category')
+V0 = df[df['Volume'] == 10]
+V1 = df[df['Volume'] == 11]
+V2 = df[df['Volume'] == 12]
+V3 = df[df['Volume'] == 13]
+
+plt.scatter(V0['Days since 1 AD']-578150.50,V0['Declination'],color = 'blue',marker = '+',label = 'Mars Position (Volume 10)',alpha = 0.25)
+plt.scatter(V1['Days since 1 AD']-578150.50,V1['Declination'],color = 'red',marker = '+',label = 'Mars Position (Volume 11)',alpha = 0.25)
+plt.scatter(V2['Days since 1 AD']-578150.50,V2['Declination'],color = 'green',marker = '+',label = 'Mars Position (Volume 12)',alpha = 0.25)
+plt.scatter(V3['Days since 1 AD']-578150.50,V3['Declination'],color = 'black',marker = '+',label = 'Mars Position (Volume 13)',alpha = 0.25)
+plt.legend(loc = 4)
+
+gd = plt.figure(1)
+plt.grid(alpha = 0.25)
+gd.set_size_inches(12,5)
+
+plt.xlabel("Time since first observation (days)")
+plt.ylabel("Angle of declination (degrees)")
+plt.title("Tycho Brahe's Mars Data")
+
 
