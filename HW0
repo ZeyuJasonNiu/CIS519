@@ -15,7 +15,12 @@
 
 '''HW0-Problem-3'''
 
-
+    iris['species']=iris['species'].replace("setosa",0)
+    iris['species']=iris['species'].replace("versicolor",1)
+    iris['species']=iris['species'].replace("virginica",2)
+    n0 = [iris[0:n],iris[50:50+n],iris[100:100+n]]
+    final = pd.concat(n0)
+    return final
 
 '''HW0-Problem-4'''
 
